@@ -32,3 +32,9 @@ lst2[4].style.fontWeight="bolder";
 var l=document.getElementsByTagName("li");
 console.log(l);
 l[4].style.background="aqua";
+//using query-selector
+var lists=document.querySelector(".list-group-item:nth-child(2)");
+console.log(lists);
+lists.style.backgroundColor="Green";
+var thirdlist=document.querySelector(".list-group-item:nth-child(3)");
+thirdlist.style.display="none";
