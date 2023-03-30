@@ -27,3 +27,8 @@ var lst2=document.getElementsByClassName("list-group-item");
 console.log(lst2);
 lst2[2].style.background="green";
 lst2[2].style.fontWeight="bolder";
+lst2[4].style.fontWeight="bolder";
+//using getelementbytagname
+var l=document.getElementsByTagName("li");
+console.log(l);
+l[4].style.background="aqua";
