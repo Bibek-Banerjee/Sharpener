@@ -16,8 +16,14 @@ console.log(document.images);
 var headr=document.getElementById("header-title");
 headr.style.borderBottom="3px solid black";
 
-//GetelementByClassName
+// GetelementByClassName
 var lst=document.getElementsByClassName("title");
 console.log(lst);
 lst[0].style.color="green";
-lst[0].style.fontWeight="bold";
+lst[0].style.fontWeight="bolder";
+lst[1].style.fontWeight="bolder";
+lst[1].style.color="blue";
+var lst2=document.getElementsByClassName("list-group-item");
+console.log(lst2);
+lst2[2].style.background="green";
+lst2[2].style.fontWeight="bolder";
