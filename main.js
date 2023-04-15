@@ -18,8 +18,10 @@ function addItem(e){
 
   // Create new li element
   var li = document.createElement('li');
+
   // Add class
   li.className = 'list-group-item';
+
   // Add text node with input value
   li.appendChild(document.createTextNode(newItem));
 
@@ -47,4 +49,22 @@ function removeItem(e){
       itemList.removeChild(li);
     }
   }
+}
+
+//filter Items
+function filterItems(e){
+    var text = e.target.value.toLowerCase();
+    // console.log(itemList);
+    var itm = itemList.getElementsByTagName('li');
+    // console.log(itm)
+    Array.from(itm).forEach(function(item){
+        var itemName = item.firstChild.textContent;
+        // console.log(itemName);
+        if(itemName.toLowerCase().indexOf(text) != -1){
+            item.style.display='Block';
+        }
+        else{
+            item.style.display='none';
+        }
+    })
 }
