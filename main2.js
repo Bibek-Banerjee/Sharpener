@@ -5,8 +5,12 @@ form.addEventListener('submit',toLocal);
 
 function toLocal(e){
     e.preventDefault();
-    var nm=document.getElementById("name").value;
-    var mail=document.getElementById("email").value;
-    localStorage.setItem("Name",nm);
-    localStorage.setItem("email",mail);
+    var myObj={
+        nm:document.getElementById("name").value,
+        mail:document.getElementById("email").value
+    };
+    var obj=JSON.stringify(myObj);
+    // console.log(obj);
+    localStorage.setItem("myobj",obj);
+    // localStorage.setItem("email",mail);
 }
