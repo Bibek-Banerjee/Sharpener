@@ -10,6 +10,9 @@ function local(e){
     var del=document.createElement("button");
     del.id=em;
     del.innerHTML="delete";
+    var edit=document.createElement("button");
+    edit.className=em;
+    edit.innerHTML="edit";
     var myobj={
         nme:nm,
         eml:em,
@@ -19,12 +22,13 @@ function local(e){
     localStorage.setItem(em,newobj);
     var lst=document.getElementById("list");
     var li=document.createElement("li");
-    li.className=em;
+    // li.className=em;
     var newItem=em+"-"+nm+'-'+pn;
     li.appendChild(document.createTextNode(newItem));
     del.addEventListener("click",delt);
+    edit.addEventListener("click",edt);
     li.appendChild(del);
-    // console.log(del);
+    li.appendChild(edit);
     lst.appendChild(li);
 }
 function delt(e){
@@ -35,3 +39,13 @@ function delt(e){
     console.log(e.target.parentElement);
     lis.removeChild(e.target.parentElement);
 }
+function edt(e){
+    var ide=this.className;
+    var ls=document.getElementById("list");
+    // console.log(e.target);
+    document.getElementById("Name").value=JSON.parse(localStorage.getItem(ide)).nme;
+    document.getElementById("Email").value=JSON.parse(localStorage.getItem(ide)).eml;
+    document.getElementById("phno").value=JSON.parse(localStorage.getItem(ide)).pno;
+    localStorage.removeItem(ide);
+    ls.removeChild(e.target.parentElement);
+    }
